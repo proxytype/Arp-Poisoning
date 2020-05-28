@@ -247,14 +247,15 @@ main(int argc, char **argv)
 
 	while (1)
 	{
-	if(!SendRawPacket(raw, packet, pkt_len))
-	{
-		perror("Error sending packet");
-	}
-	else
-		printf("Packet sent successfully\n");
-
-	sleep(5);
+		if(!SendRawPacket(raw, packet, pkt_len))
+		{
+			perror("Error sending packet");
+		}
+		else
+		{
+			printf("Packet sent successfully\n");
+		}
+		sleep(5);
 	}
 
 	/* Free the memory back to the heavenly heap */
